@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import CategoryList from './CategoryList';
+import CategoryDetails from './CategoryDetails';
+import CocktailDetailPage from './CocktailDetailPage';
+import NavigationMenu from './NavigationMenu';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <h1>La beuvrie n'est jamais finie</h1>
+        <NavigationMenu />
+        <Switch>
+          <Route exact path="/" component={CategoryList} />
+          <Route path="/category/:id" component={CategoryDetails} />
+          <Route path="/cocktail/:id" component={CocktailDetailPage} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 
