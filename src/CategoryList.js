@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button, Navbar, Container, Row, Col, Card } from 'react-bootstrap';
+import './Cocktail.css';
 function CategoryList() {
   const [categories, setCategories] = useState([]);
 
@@ -13,17 +15,20 @@ function CategoryList() {
   }, []); // Le tableau vide en tant que deuxième argument garantit que cette requête est effectuée une seule fois lors du montage du composant.
 
   return (
-    <div>
+    <Container>
       <h2>Les grandes catégories de cocktails</h2>
-      <ul>
+      <Row className='center'>
         {categories.map((category) => (
-          <li key={category.strCategory}>
-            <Link to={`/category/${category.strCategory}`}>{category.strCategory}</Link>
-          </li>
+          <Card className='col-lg-3 col-12 card-home'>
+            <Col className='center' key={category.strCategory}>
+              <Link to={`/category/${encodeURIComponent(category.strCategory)}`}>{category.strCategory}</Link>
+            </Col>
+          </Card>
         ))}
-      </ul>
-    </div>
+      </Row>
+    </Container>
   );
+  
 }
 
 export default CategoryList;

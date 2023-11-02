@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Lato:wght@300;400&display=swap');
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+h1,
+h2 {
+    font-family: 'Agbalumo', sans-serif;
+    text-align: center;
+    font-weight: bold;
+}
+
+h1 {
+    color: rgb(255, 84, 45);
+    padding: 15px;
+}
+
+h2{
+    margin-bottom: 15px;
+}
+
+.center {
+    justify-content: center;
+    text-align: center;
+}
+
+.pagination-wrapper {
+    margin-top: 3%;
+}
+
+.card-home,
+.card-details {
+    padding: 15px;
+    text-align: center;
+    margin: 10px 0 10px 0;
+}
+
+.card-details h3 {
+    font-size: 1.2rem;
+}
+
+.card-details img {
+    max-width: 100%;
+    border-radius: 20px;
+    width: 150px;
+    margin-bottom: 5px;
+}
+
+.wrapper-img img {
+    max-width: 100%;
+    border-radius: 20px;
+    margin-bottom: 5px;
+}
+
+.wrapper-btn {
+    justify-content: center;
+}
+
+.btn-details,
+.btn-like {
+    margin-bottom: 5px;
+    width: auto;
+}
+
+.ingredient {
+    padding: 20px;
+    border: 1px solid #c8c8c8;
+    border-radius: 15px;
+}
+.ingredient img,
+.ingredient span{
+    max-width: 100%;
+}
+.link {
+    color: #fff;
+    text-decoration: none;
+}
+
+input {
+    width: 100%;
+}
+
+.close {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+    padding: 2.5px 5px 2.5px 5px;
+}
+@media screen and (max-width:768px){
+    .navbar{
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 10;
+    }
+    .card-details h3{
+        font-size: 1rem;
+    }
+    .description{
+        margin-bottom: 50px;
+    }
+}
