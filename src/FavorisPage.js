@@ -1,8 +1,8 @@
 import React from 'react';
 import { useFavoris } from './FavorisContext';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Container, Row, Col, Card } from 'react-bootstrap';
+import { Button, Container, Row, Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import './Cocktail.css';
@@ -31,7 +31,7 @@ function FavorisPage() {
                   className='btn-danger btn-details close'
                   onClick={() => handleRemoveFavori(cocktail.idDrink)}
                 >
-                  <FontAwesomeIcon icon={faTimes} /> {/* Utilisez l'icône de croix */}
+                  <FontAwesomeIcon icon={faTimes} />
                 </Button>
               </Row>
             </div>

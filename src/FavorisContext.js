@@ -12,7 +12,7 @@ export const FavorisProvider = ({ children }) => {
 
   const toggleFavori = (cocktail) => {
     if (isFavori(cocktail)) {
-      removeFavori(cocktail.idDrink); // Utilisez removeFavori avec l'ID du cocktail
+      removeFavori(cocktail.idDrink);
     } else {
       addFavori(cocktail);
     }

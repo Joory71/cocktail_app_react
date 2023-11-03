@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome, faHeart } from '@fortawesome/free-solid-svg-icons'; // Import the "home" icon
+import { faHome, faHeart } from '@fortawesome/free-solid-svg-icons';
 import './Navigation.css';
 
 function NavigationMenu() {
@@ -18,7 +18,6 @@ function NavigationMenu() {
             <FontAwesomeIcon icon={faHeart} />
           </Link>
         </li>
-        {/* Add more menu items as needed */}
       </ul>
     </nav>
   );

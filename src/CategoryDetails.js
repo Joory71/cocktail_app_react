@@ -14,11 +14,11 @@ function CategoryDetails() {
   const [searchTerm, setSearchTerm] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const cocktailsPerPage = 12;
-  const searchInputRef = useRef(null); // Create a ref for the search input
+  const searchInputRef = useRef(null);
   const { toggleFavori, isFavori } = useFavoris();
 
   useEffect(() => {
-    // Fetch cocktails based on the category ID.
+    // Afficher les cocktails en fpnction de leur ID.
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${id}`)
       .then((response) => response.json())
       .then((data) => {
@@ -40,7 +40,7 @@ function CategoryDetails() {
     const searchValue = searchInputRef.current.value;
     setSearchTerm(searchValue);
 
-    // Fetch cocktails based on ingredients
+    // Afficher les cocktails en fonctions des ingrédients
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${searchValue}`)
       .then((response) => response.json())
       .then((data) => {
@@ -55,13 +55,12 @@ function CategoryDetails() {
     }
   };
 
-  // Calculate the offset
+  // Calculer le décalage
   const offset = (currentPage - 1) * cocktailsPerPage;
 
   // Calculate the total number of pages
   const totalPages = Math.ceil(cocktails.length / cocktailsPerPage);
 
-  // Fonction pour calculer les indices des pages à afficher
   // Fonction pour calculer les indices des pages à afficher
   const getVisiblePageIndices = (currentPage, totalPages) => {
     const numVisiblePages = 3;
@@ -90,7 +89,7 @@ function CategoryDetails() {
   
 
 
-  // Get visible cocktails for the current page
+  // Récupérer les cocktails visible pour la page actuelle
   const visibleCocktails = cocktails.slice(offset, offset + cocktailsPerPage);
 
   return (

@@ -2,15 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import IngredientImage from './IngredientImage';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button, Navbar, Container, Row, Col, Card, Badge } from 'react-bootstrap';
+import {Container, Row, Col, Badge } from 'react-bootstrap';
 import './Cocktail.css';
 function CocktailDetailPage() {
   const { id } = useParams();
   const [cocktail, setCocktail] = useState(null);
 
   useEffect(() => {
-    // Effectuez une requête pour obtenir les détails du cocktail en fonction de son ID (id).
-    // Remplacez l'URL de l'API et la requête en conséquence.
+    // Requête pour obtenir les détails du cocktail en fonction de son ID (id).
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((response) => response.json())
       .then((data) => setCocktail(data.drinks[0]))
